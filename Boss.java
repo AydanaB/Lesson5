@@ -1,30 +1,33 @@
 package com.company;
 
-public class Boss {
-    private int heath, damage;
-    private String protectionType;
+public class Boss extends GameEntity{
+    private String weaponType,weaponName;
 
-    public int getHeath() {
-        return heath;
+    public Boss(int health, int damage, String superPower, String weaponName, String weaponType) {
+        super(health, damage, superPower);
+        this.weaponType = weaponType;
+        this.weaponName = weaponName;
     }
 
-    public void setHeath(int heath) {
-        this.heath = heath;
+    @Override
+    public String getInfo() {
+        System.out.println("Weapon type: " + weaponType + ", Weapon name: " + weaponName);
+        return super.getInfo();
     }
 
-    public int getDamage() {
-        return damage;
+    public String getWeaponType() {
+        return weaponType;
     }
 
-    public void setDamage(int damage) {
-        this.damage = damage;
+    public void setWeaponType(String weaponType) {
+        this.weaponType = weaponType;
     }
 
-    public String getProtectionType() {
-        return protectionType;
+    public String getWeaponName() {
+        return weaponName;
     }
 
-    public void setProtectionType(String protectionType) {
-        this.protectionType = protectionType;
+    public void setWeaponName(String weaponName) {
+        this.weaponName = weaponName;
     }
 }
